@@ -1,3 +1,10 @@
+//
+//  Job.swift
+//  SilentArchive
+//
+//  Created by Sasha on 1/17/26.
+//
+
 import Foundation
 
 public struct Job: Codable, Sendable {

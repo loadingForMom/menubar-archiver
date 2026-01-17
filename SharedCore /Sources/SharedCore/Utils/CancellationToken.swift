@@ -1,3 +1,10 @@
+//
+//  CancellationToken.swift
+//  SharedCore
+//
+//  Created by Sasha on 1/17/26.
+//
+
 import Foundation
 
 public final class CancellationToken: @unchecked Sendable {

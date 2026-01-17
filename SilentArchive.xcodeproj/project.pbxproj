@@ -6,13 +6,33 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		84F68B512F1BEF8100442150 /* SharedCore in Frameworks */ = {isa = PBXBuildFile; productRef = 84F68B502F1BEF8100442150 /* SharedCore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		848076DC2F1BD92A0080BD4C /* SilentArchive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilentArchive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F68B312F1BEEFC00442150 /* SharedCore  */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "SharedCore "; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		84F68B2F2F1BEEBD00442150 /* Exceptions for "SilentArchive" folder in "SilentArchive" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				.gitignore,
+				ArchiverAgent/info.plist,
+				ArchiverQuickAction/info.plist,
+			);
+			target = 848076DB2F1BD92A0080BD4C /* SilentArchive */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		848076DE2F1BD92A0080BD4C /* SilentArchive */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				84F68B2F2F1BEEBD00442150 /* Exceptions for "SilentArchive" folder in "SilentArchive" target */,
+			);
 			path = SilentArchive;
 			sourceTree = "<group>";
 		};
@@ -23,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F68B512F1BEF8100442150 /* SharedCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				848076DE2F1BD92A0080BD4C /* SilentArchive */,
+				84F68B302F1BEEFB00442150 /* Frameworks */,
 				848076DD2F1BD92A0080BD4C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +65,14 @@
 				848076DC2F1BD92A0080BD4C /* SilentArchive.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		84F68B302F1BEEFB00442150 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84F68B312F1BEEFC00442150 /* SharedCore  */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,6 +95,7 @@
 			);
 			name = SilentArchive;
 			packageProductDependencies = (
+				84F68B502F1BEF8100442150 /* SharedCore */,
 			);
 			productName = SilentArchive;
 			productReference = 848076DC2F1BD92A0080BD4C /* SilentArchive.app */;
@@ -94,6 +125,9 @@
 			);
 			mainGroup = 848076D32F1BD92A0080BD4C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				84F68B2D2F1BED4E00442150 /* XCLocalSwiftPackageReference "SharedCore " */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 848076DD2F1BD92A0080BD4C /* Products */;
 			projectDirPath = "";
@@ -253,13 +287,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "SharedCore\\ ";
 				DEVELOPMENT_TEAM = 4F34Y2LNZG;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ArchiverAgent/info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_PREPROCESS = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -285,13 +323,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "SharedCore\\ ";
 				DEVELOPMENT_TEAM = 4F34Y2LNZG;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ArchiverAgent/info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_PREPROCESS = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -331,6 +373,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		84F68B2D2F1BED4E00442150 /* XCLocalSwiftPackageReference "SharedCore " */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "SharedCore ";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		84F68B502F1BEF8100442150 /* SharedCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 848076D42F1BD92A0080BD4C /* Project object */;
 }

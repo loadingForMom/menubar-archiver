@@ -1,3 +1,10 @@
+//
+//  ZipFoundationEngine.swift
+//  SilentArchive
+//
+//  Created by Sasha on 1/17/26.
+//
+
 import Foundation
 import ZIPFoundation
 
