@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "848076DB2F1BD92A0080BD4C"
-               BuildableName = "ArchiverAgent.app"
-               BlueprintName = "ArchiverAgent"
+            BuildableName = "ArchiverAgent.app"
+            BlueprintName = "ArchiverAgent"
             ReferencedContainer = "container:SilentArchive.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -56,7 +56,11 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/admin/Desktop/SomeFolderOrFile"
+            argument = "/Users/admin/Downloads/GitHubDesktop-arm64.zip"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "--extract"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
@@ -72,8 +76,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "848076DB2F1BD92A0080BD4C"
-               BuildableName = "ArchiverAgent.app"
-               BlueprintName = "ArchiverAgent"
+            BuildableName = "ArchiverAgent.app"
+            BlueprintName = "ArchiverAgent"
             ReferencedContainer = "container:SilentArchive.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

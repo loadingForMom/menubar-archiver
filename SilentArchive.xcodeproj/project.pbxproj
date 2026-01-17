@@ -9,89 +9,88 @@
 /* Begin PBXBuildFile section */
 		3E1B1256FB884BA6834C2C0A /* StatusItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0CB5DA2B564D7CAC812619 /* StatusItemView.swift */; };
 		4CB63F3FA2324A1983BACC67 /* JobCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A0585E5AA94DD2A1DCB5EE /* JobCreator.swift */; };
-		526307593F6D4A7BA083231A /* ArchiverQuickAction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 25F836E32C3046F9B052A76D /* ArchiverQuickAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		84F68B512F1BEF8100442150 /* SharedCore in Frameworks */ = {isa = PBXBuildFile; productRef = 84F68B502F1BEF8100442150 /* SharedCore */; };
-		8F47FF847C554DC9AB80849E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A7201E93A14FE682593091 /* Assets.xcassets */; };
+		526307593F6D4A7BA083231A /* ArchiverQuickAction.appex in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25F836E32C3046F9B052A76D /* ArchiverQuickAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		84F68B572F1BFA0A00442150 /* SharedCore in Frameworks */ = {isa = PBXBuildFile; productRef = 84F68B562F1BFA0A00442150 /* SharedCore */; };
+		84F68B5A2F1BFA2200442150 /* SharedCore in Frameworks */ = {isa = PBXBuildFile; productRef = 84F68B592F1BFA2200442150 /* SharedCore */; };
+		8F47FF847C554DC9AB80849E /* SilentArchive/Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A7201E93A14FE682593091 /* SilentArchive/Assets.xcassets */; };
 		9577B560026B40E1B723C0D8 /* ArchiveWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9560353EB5DB4A3E9BC1F8C9 /* ArchiveWorker.swift */; };
 		9D4247E999B94812868FCCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEF6A7142C441395A7B4A1 /* AppDelegate.swift */; };
 		A6461CB43B5B429E8C0FE214 /* URLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1BFEDF82C400CAF67220C /* URLRouter.swift */; };
 		DFDD7F20C38C444E9A6C7F04 /* QuickActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA53BD13E241B9B49D2D2A /* QuickActionHandler.swift */; };
 		EBA8EC78D8DA463297B208C4 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7751195B17DD4362B2E5C9E8 /* JobQueue.swift */; };
 		EBD1997162CA4FAEA0A9D43F /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE105CC5FA6A4019B0A87B87 /* StatusBarController.swift */; };
-		813BCEE2124F4998A486ACA6 /* SharedCore in Frameworks */ = {isa = PBXBuildFile; productRef = 84F68B502F1BEF8100442150 /* SharedCore */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
-		25F836E32C3046F9B052A76D /* ArchiverQuickAction.appex */ = {isa = PBXFileReference; explicitFileType = wrapper.app-extension; includeInIndex = 0; path = ArchiverQuickAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A8002BE38DC4053B32C4408 /* ArchiverAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArchiverAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B0CB5DA2B564D7CAC812619 /* StatusItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemView.swift; sourceTree = "<group>"; };
-		51CEF6A7142C441395A7B4A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7751195B17DD4362B2E5C9E8 /* JobQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
-		82B1BFEDF82C400CAF67220C /* URLRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRouter.swift; sourceTree = "<group>"; };
-		9560353EB5DB4A3E9BC1F8C9 /* ArchiveWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveWorker.swift; sourceTree = "<group>"; };
-		97A0585E5AA94DD2A1DCB5EE /* JobCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCreator.swift; sourceTree = "<group>"; };
-		A54CF082205947A08E2DDB24 /* ArchiverQuickAction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArchiverQuickAction.entitlements; sourceTree = "<group>"; };
-		AD32D1701044474DA27DCD8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B88F5399F83B4F629BB1A024 /* ArchiverAgent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArchiverAgent.entitlements; sourceTree = "<group>"; };
-		BFFA53BD13E241B9B49D2D2A /* QuickActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionHandler.swift; sourceTree = "<group>"; };
-		C0A7201E93A14FE682593091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SilentArchive/Assets.xcassets; sourceTree = "<group>"; };
-		DE105CC5FA6A4019B0A87B87 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
-		5649F78339CC4988A6659172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84F68B312F1BEEFC00442150 /* SharedCore  */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "SharedCore "; sourceTree = "<group>"; };
-/* End PBXFileReference section */
 
 /* Begin PBXContainerItemProxy section */
 		63029FA39AC645D492098033 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 848076D42F1BD92A0080BD4C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7667403EE2B64E64A912A1B0 /* ArchiverQuickAction */;
+			remoteGlobalIDString = 7667403EE2B64E64A912A1B0;
 			remoteInfo = ArchiverQuickAction;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C10AE88AE2B345DE932BC19A /* Embed App Extensions */ = {
+		C10AE88AE2B345DE932BC19A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				526307593F6D4A7BA083231A /* ArchiverQuickAction.appex in Embed App Extensions */,
+				526307593F6D4A7BA083231A /* ArchiverQuickAction.appex in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
+/* Begin PBXFileReference section */
+		25F836E32C3046F9B052A76D /* ArchiverQuickAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ArchiverQuickAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A8002BE38DC4053B32C4408 /* ArchiverAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArchiverAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B0CB5DA2B564D7CAC812619 /* StatusItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemView.swift; sourceTree = "<group>"; };
+		51CEF6A7142C441395A7B4A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5649F78339CC4988A6659172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7751195B17DD4362B2E5C9E8 /* JobQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
+		82B1BFEDF82C400CAF67220C /* URLRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRouter.swift; sourceTree = "<group>"; };
+		84F68B312F1BEEFC00442150 /* SharedCore  */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "SharedCore "; sourceTree = "<group>"; };
+		84F68B522F1BF93C00442150 /* SharedCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SharedCore; sourceTree = "<group>"; };
+		84F68B532F1BF94800442150 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = SharedCore/Package.swift; sourceTree = "<group>"; };
+		9560353EB5DB4A3E9BC1F8C9 /* ArchiveWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveWorker.swift; sourceTree = "<group>"; };
+		97A0585E5AA94DD2A1DCB5EE /* JobCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCreator.swift; sourceTree = "<group>"; };
+		A54CF082205947A08E2DDB24 /* ArchiverQuickAction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArchiverQuickAction.entitlements; sourceTree = "<group>"; };
+		AD32D1701044474DA27DCD8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B88F5399F83B4F629BB1A024 /* ArchiverAgent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArchiverAgent.entitlements; sourceTree = "<group>"; };
+		BFFA53BD13E241B9B49D2D2A /* QuickActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionHandler.swift; sourceTree = "<group>"; };
+		C0A7201E93A14FE682593091 /* SilentArchive/Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SilentArchive/Assets.xcassets; sourceTree = "<group>"; };
+		DE105CC5FA6A4019B0A87B87 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		848076D92F1BD92A0080BD4C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				84F68B512F1BEF8100442150 /* SharedCore in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5829AF05ECDB490FA0BF2D6E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				813BCEE2124F4998A486ACA6 /* SharedCore in Frameworks */,
+				84F68B5A2F1BFA2200442150 /* SharedCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		848076D92F1BD92A0080BD4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F68B572F1BFA0A00442150 /* SharedCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		848076D32F1BD92A0080BD4C = {
+		573985F45EA44A9CA05D7823 /* Workers */ = {
 			isa = PBXGroup;
 			children = (
-				B8F8EE69EC17472486CCFD20 /* ArchiverAgent */,
-				952C184146E8499DB993862F /* ArchiverQuickAction */,
-				C0A7201E93A14FE682593091 /* Assets.xcassets */,
-				84F68B302F1BEEFB00442150 /* Frameworks */,
-				848076DD2F1BD92A0080BD4C /* Products */,
+				9560353EB5DB4A3E9BC1F8C9 /* ArchiveWorker.swift */,
 			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		65BAE271397C48E493B0BDD8 /* StatusBar */ = {
@@ -103,12 +102,15 @@
 			path = StatusBar;
 			sourceTree = "<group>";
 		};
-		573985F45EA44A9CA05D7823 /* Workers */ = {
+		848076D32F1BD92A0080BD4C = {
 			isa = PBXGroup;
 			children = (
-				9560353EB5DB4A3E9BC1F8C9 /* ArchiveWorker.swift */,
+				B8F8EE69EC17472486CCFD20 /* ArchiverAgent */,
+				952C184146E8499DB993862F /* ArchiverQuickAction */,
+				C0A7201E93A14FE682593091 /* SilentArchive/Assets.xcassets */,
+				84F68B302F1BEEFB00442150 /* Frameworks */,
+				848076DD2F1BD92A0080BD4C /* Products */,
 			);
-			path = Workers;
 			sourceTree = "<group>";
 		};
 		848076DD2F1BD92A0080BD4C /* Products */ = {
@@ -123,6 +125,8 @@
 		84F68B302F1BEEFB00442150 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84F68B532F1BF94800442150 /* Package.swift */,
+				84F68B522F1BF93C00442150 /* SharedCore */,
 				84F68B312F1BEEFC00442150 /* SharedCore  */,
 			);
 			name = Frameworks;
@@ -170,7 +174,7 @@
 			);
 			name = ArchiverQuickAction;
 			packageProductDependencies = (
-				84F68B502F1BEF8100442150 /* SharedCore */,
+				84F68B592F1BFA2200442150 /* SharedCore */,
 			);
 			productName = ArchiverQuickAction;
 			productReference = 25F836E32C3046F9B052A76D /* ArchiverQuickAction.appex */;
@@ -183,7 +187,7 @@
 				848076D82F1BD92A0080BD4C /* Sources */,
 				848076D92F1BD92A0080BD4C /* Frameworks */,
 				848076DA2F1BD92A0080BD4C /* Resources */,
-				C10AE88AE2B345DE932BC19A /* Embed App Extensions */,
+				C10AE88AE2B345DE932BC19A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -192,7 +196,7 @@
 			);
 			name = ArchiverAgent;
 			packageProductDependencies = (
-				84F68B502F1BEF8100442150 /* SharedCore */,
+				84F68B562F1BFA0A00442150 /* SharedCore */,
 			);
 			productName = ArchiverAgent;
 			productReference = 3A8002BE38DC4053B32C4408 /* ArchiverAgent.app */;
@@ -226,7 +230,7 @@
 			mainGroup = 848076D32F1BD92A0080BD4C;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				84F68B2D2F1BED4E00442150 /* XCLocalSwiftPackageReference "SharedCore " */,
+				84F68B582F1BFA2200442150 /* XCLocalSwiftPackageReference "SharedCore" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 848076DD2F1BD92A0080BD4C /* Products */;
@@ -244,7 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F47FF847C554DC9AB80849E /* Assets.xcassets in Resources */,
+				8F47FF847C554DC9AB80849E /* SilentArchive/Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +262,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0A2A21E68CC646C9BC92AB7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFDD7F20C38C444E9A6C7F04 /* QuickActionHandler.swift in Sources */,
+				4CB63F3FA2324A1983BACC67 /* JobCreator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		848076D82F1BD92A0080BD4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,15 +281,6 @@
 				EBD1997162CA4FAEA0A9D43F /* StatusBarController.swift in Sources */,
 				3E1B1256FB884BA6834C2C0A /* StatusItemView.swift in Sources */,
 				9577B560026B40E1B723C0D8 /* ArchiveWorker.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0A2A21E68CC646C9BC92AB7C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DFDD7F20C38C444E9A6C7F04 /* QuickActionHandler.swift in Sources */,
-				4CB63F3FA2324A1983BACC67 /* JobCreator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +295,58 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		3399AF75023F48B5BD678B6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				AUTOMATION_APPLE_EVENTS = NO;
+				CODE_SIGN_ENTITLEMENTS = ArchiverQuickAction/ArchiverQuickAction.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4F34Y2LNZG;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_FILE_ACCESS_DOWNLOADS_FOLDER = readwrite;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ArchiverQuickAction/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.silentarchive.quickaction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		848076E52F1BD92B0080BD4C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -416,17 +472,30 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				AUTOMATION_APPLE_EVENTS = NO;
+				CODE_SIGN_ENTITLEMENTS = ArchiverAgent/ArchiverAgent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "SharedCore\\ ";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4F34Y2LNZG;
 				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_FILE_ACCESS_DOWNLOADS_FOLDER = readwrite;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = NO;
-				CODE_SIGN_ENTITLEMENTS = ArchiverAgent/ArchiverAgent.entitlements;
 				INFOPLIST_FILE = ArchiverAgent/Info.plist;
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -436,9 +505,15 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.silentarchive.agent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.silentarchive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -453,17 +528,30 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				AUTOMATION_APPLE_EVENTS = NO;
+				CODE_SIGN_ENTITLEMENTS = ArchiverAgent/ArchiverAgent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "SharedCore\\ ";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4F34Y2LNZG;
 				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_FILE_ACCESS_DOWNLOADS_FOLDER = readwrite;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = NO;
-				CODE_SIGN_ENTITLEMENTS = ArchiverAgent/ArchiverAgent.entitlements;
 				INFOPLIST_FILE = ArchiverAgent/Info.plist;
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -473,9 +561,15 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.silentarchive.agent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.silentarchive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -489,14 +583,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				AUTOMATION_APPLE_EVENTS = NO;
 				CODE_SIGN_ENTITLEMENTS = ArchiverQuickAction/ArchiverQuickAction.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4F34Y2LNZG;
 				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_FILE_ACCESS_DOWNLOADS_FOLDER = readwrite;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ArchiverQuickAction/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -507,6 +615,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.silentarchive.quickaction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -517,41 +631,18 @@
 			};
 			name = Debug;
 		};
-		3399AF75023F48B5BD678B6A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_ENTITLEMENTS = ArchiverQuickAction/ArchiverQuickAction.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4F34Y2LNZG;
-				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = ArchiverQuickAction/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.silentarchive.quickaction;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		82EBA11D500A45B6A044DF10 /* Build configuration list for PBXNativeTarget "ArchiverQuickAction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACE52E8EA536436598DA42F6 /* Debug */,
+				3399AF75023F48B5BD678B6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		848076D72F1BD92A0080BD4C /* Build configuration list for PBXProject "SilentArchive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -570,26 +661,21 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82EBA11D500A45B6A044DF10 /* Build configuration list for PBXNativeTarget "ArchiverQuickAction" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ACE52E8EA536436598DA42F6 /* Debug */,
-				3399AF75023F48B5BD678B6A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		84F68B2D2F1BED4E00442150 /* XCLocalSwiftPackageReference "SharedCore " */ = {
+		84F68B582F1BFA2200442150 /* XCLocalSwiftPackageReference "SharedCore" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = "SharedCore ";
+			relativePath = SharedCore;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		84F68B502F1BEF8100442150 /* SharedCore */ = {
+		84F68B562F1BFA0A00442150 /* SharedCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedCore;
+		};
+		84F68B592F1BFA2200442150 /* SharedCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SharedCore;
 		};
