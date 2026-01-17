@@ -3,7 +3,7 @@ import os.log
 import SharedCore
 
 final class ArchiveWorker {
-    struct Progress {
+    struct Progress: Sendable {
         let fractionComplete: Double
         let completed: Int
         let total: Int
@@ -21,19 +21,43 @@ final class ArchiveWorker {
         token.cancel()
     }
 
-    func run(progressHandler: @escaping @Sendable (Progress) -> Void) async -> JobResult {
+    func run(progressHandler: @escaping (Progress) -> Void) async -> JobResult {
         let destination = job.destinationFolderURL.appendingPathComponent(job.outputName)
         let engine = ZipFoundationEngine()
 
         do {
-            let total = try FileEnumeration.countFiles(for: job.items)
-            progressHandler(Progress(fractionComplete: 0, completed: 0, total: total))
-            try engine.archive(items: job.items, destination: destination, progress: { completed, total in
-                let fraction = total > 0 ? Double(completed) / Double(total) : 1.0
-                progressHandler(Progress(fractionComplete: fraction, completed: completed, total: total))
-            }, isCancelled: {
-                token.isCancelled()
-            })
+            switch job.operation {
+            case .archive:
+                let total = try FileEnumeration.countFiles(for: job.items)
+                progressHandler(Progress(fractionComplete: 0, completed: 0, total: total))
+                try engine.archive(
+                    items: job.items,
+                    destination: destination,
+                    progress: { completed, total in
+                        let fraction = total > 0 ? Double(completed) / Double(total) : 1.0
+                        progressHandler(Progress(fractionComplete: fraction, completed: completed, total: total))
+                    },
+                    isCancelled: {
+                        token.isCancelled()
+                    }
+                )
+            case .extract:
+                guard let archiveURL = job.items.first else {
+                    throw ArchiveError.unableToOpen
+                }
+                progressHandler(Progress(fractionComplete: 0, completed: 0, total: 0))
+                try engine.extract(
+                    archiveURL: archiveURL,
+                    destination: destination,
+                    progress: { completed, total in
+                        let fraction = total > 0 ? Double(completed) / Double(total) : 1.0
+                        progressHandler(Progress(fractionComplete: fraction, completed: completed, total: total))
+                    },
+                    isCancelled: {
+                        token.isCancelled()
+                    }
+                )
+            }
 
             return .success(destination)
         } catch let error as ArchiveError {
@@ -41,13 +65,13 @@ final class ArchiveWorker {
             switch error {
             case .cancelled:
                 return .canceled
-            case .unableToCreate:
-                return .failure(error)
+            case .unableToCreate, .unableToOpen:
+                return .failure(String(describing: error))
             }
         } catch {
-            logger.error("Archiving failed: \(error.localizedDescription, privacy: .public)")
+            logger.error("Job failed: \(error.localizedDescription, privacy: .public)")
             cleanup(destination: destination)
-            return .failure(error)
+            return .failure(error.localizedDescription)
         }
     }
 
