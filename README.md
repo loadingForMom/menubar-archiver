@@ -15,6 +15,7 @@ This workspace contains a silent macOS archiver with a Finder Quick Action and a
 3. The extension stores a job JSON at:
    `~/Library/Group Containers/group.com.example.silentarchive/jobs/<uuid>.json`
 4. The agent is invoked via `archiver://run?job=<uuid>` and runs the job silently.
+5. Double-clicking a `.zip` (or using **Open With → SilentArchive**) enqueues an extract job that unpacks to a folder next to the archive.
 
 ## Notes
 
@@ -28,5 +29,12 @@ This workspace contains a silent macOS archiver with a Finder Quick Action and a
 2. Configure the App Group identifier `group.com.example.silentarchive` in both targets.
 3. Build and run **ArchiverAgent** once to register the URL scheme.
 4. Build the **ArchiverQuickAction** target to install the Finder action.
+5. To debug locally, run **ArchiverAgent** with `--test <path>` to enqueue a test archive job, or `--test <path> --extract` to test extraction.
 
 Finder path: **right click → Quick Actions → Create Archive**.
+
+## Enabling the Finder Quick Action
+
+1. Open **System Settings → Privacy & Security → Extensions → Finder Extensions**.
+2. Enable **Create Archive**.
+3. In Finder, select one or more items and use **Quick Actions → Create Archive**.

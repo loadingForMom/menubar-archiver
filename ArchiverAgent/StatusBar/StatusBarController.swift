@@ -11,7 +11,7 @@ final class StatusBarController {
     func begin(job: Job, cancelHandler: @escaping () -> Void) {
         ensureStatusItem()
         finishTimer?.invalidate()
-        statusItemView?.resetForProgress()
+        statusItemView?.resetForProgress(operation: job.operation)
         statusItemView?.onCancel = cancelHandler
     }
 
@@ -42,7 +42,9 @@ final class StatusBarController {
 
         finishTimer?.invalidate()
         finishTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { [weak self] _ in
-            self?.removeStatusItem()
+            Task { @MainActor in
+                self?.removeStatusItem()
+            }
         }
     }
 
@@ -71,6 +73,7 @@ final class StatusBarController {
     private func removeStatusItem() {
         finishTimer?.invalidate()
         finishTimer = nil
+        queueInfo = nil
         if let item = statusItem {
             NSStatusBar.system.removeStatusItem(item)
         }

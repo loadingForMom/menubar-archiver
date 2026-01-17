@@ -7,12 +7,18 @@
 
 import Foundation
 
-public protocol ArchivingEngine: Sendable {
+public protocol ArchivingEngine {
     func archive(
         items: [URL],
         destination: URL,
-        progress: @Sendable (Int, Int) -> Void,
-        isCancelled: @Sendable () -> Bool
+        progress: (Int, Int) -> Void,
+        isCancelled: () -> Bool
+    ) throws
+
+    func extract(
+        archiveURL: URL,
+        destination: URL,
+        progress: (Int, Int) -> Void,
+        isCancelled: () -> Bool
     ) throws
 }
-

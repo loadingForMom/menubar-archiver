@@ -1,4 +1,5 @@
 import AppKit
+import SharedCore
 
 final class StatusItemView: NSView {
     private let progressIndicator = NSProgressIndicator()
@@ -65,10 +66,10 @@ final class StatusItemView: NSView {
         titleLabel.stringValue = "\(symbol) \(text)"
     }
 
-    func resetForProgress() {
+    func resetForProgress(operation: Job.Operation) {
         progressIndicator.isHidden = false
         cancelButton.isHidden = false
-        titleLabel.stringValue = "Archiving…"
+        titleLabel.stringValue = operation == .extract ? "Extracting…" : "Archiving…"
     }
 
     @objc private func cancelTapped() {

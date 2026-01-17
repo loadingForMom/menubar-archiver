@@ -7,36 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E1B1256FB884BA6834C2C0A /* StatusItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0CB5DA2B564D7CAC812619 /* StatusItemView.swift */; };
+		4CB63F3FA2324A1983BACC67 /* JobCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A0585E5AA94DD2A1DCB5EE /* JobCreator.swift */; };
+		526307593F6D4A7BA083231A /* ArchiverQuickAction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 25F836E32C3046F9B052A76D /* ArchiverQuickAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		84F68B512F1BEF8100442150 /* SharedCore in Frameworks */ = {isa = PBXBuildFile; productRef = 84F68B502F1BEF8100442150 /* SharedCore */; };
+		8F47FF847C554DC9AB80849E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A7201E93A14FE682593091 /* Assets.xcassets */; };
+		9577B560026B40E1B723C0D8 /* ArchiveWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9560353EB5DB4A3E9BC1F8C9 /* ArchiveWorker.swift */; };
+		9D4247E999B94812868FCCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEF6A7142C441395A7B4A1 /* AppDelegate.swift */; };
+		A6461CB43B5B429E8C0FE214 /* URLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1BFEDF82C400CAF67220C /* URLRouter.swift */; };
+		DFDD7F20C38C444E9A6C7F04 /* QuickActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA53BD13E241B9B49D2D2A /* QuickActionHandler.swift */; };
+		EBA8EC78D8DA463297B208C4 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7751195B17DD4362B2E5C9E8 /* JobQueue.swift */; };
+		EBD1997162CA4FAEA0A9D43F /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE105CC5FA6A4019B0A87B87 /* StatusBarController.swift */; };
+		813BCEE2124F4998A486ACA6 /* SharedCore in Frameworks */ = {isa = PBXBuildFile; productRef = 84F68B502F1BEF8100442150 /* SharedCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		848076DC2F1BD92A0080BD4C /* SilentArchive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilentArchive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25F836E32C3046F9B052A76D /* ArchiverQuickAction.appex */ = {isa = PBXFileReference; explicitFileType = wrapper.app-extension; includeInIndex = 0; path = ArchiverQuickAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A8002BE38DC4053B32C4408 /* ArchiverAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArchiverAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B0CB5DA2B564D7CAC812619 /* StatusItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemView.swift; sourceTree = "<group>"; };
+		51CEF6A7142C441395A7B4A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7751195B17DD4362B2E5C9E8 /* JobQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
+		82B1BFEDF82C400CAF67220C /* URLRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRouter.swift; sourceTree = "<group>"; };
+		9560353EB5DB4A3E9BC1F8C9 /* ArchiveWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveWorker.swift; sourceTree = "<group>"; };
+		97A0585E5AA94DD2A1DCB5EE /* JobCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCreator.swift; sourceTree = "<group>"; };
+		A54CF082205947A08E2DDB24 /* ArchiverQuickAction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArchiverQuickAction.entitlements; sourceTree = "<group>"; };
+		AD32D1701044474DA27DCD8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B88F5399F83B4F629BB1A024 /* ArchiverAgent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArchiverAgent.entitlements; sourceTree = "<group>"; };
+		BFFA53BD13E241B9B49D2D2A /* QuickActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionHandler.swift; sourceTree = "<group>"; };
+		C0A7201E93A14FE682593091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SilentArchive/Assets.xcassets; sourceTree = "<group>"; };
+		DE105CC5FA6A4019B0A87B87 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		5649F78339CC4988A6659172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F68B312F1BEEFC00442150 /* SharedCore  */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "SharedCore "; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		84F68B2F2F1BEEBD00442150 /* Exceptions for "SilentArchive" folder in "SilentArchive" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				.gitignore,
-				ArchiverAgent/info.plist,
-				ArchiverQuickAction/info.plist,
-			);
-			target = 848076DB2F1BD92A0080BD4C /* SilentArchive */;
+/* Begin PBXContainerItemProxy section */
+		63029FA39AC645D492098033 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 848076D42F1BD92A0080BD4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7667403EE2B64E64A912A1B0 /* ArchiverQuickAction */;
+			remoteInfo = ArchiverQuickAction;
 		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+/* End PBXContainerItemProxy section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		848076DE2F1BD92A0080BD4C /* SilentArchive */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				84F68B2F2F1BEEBD00442150 /* Exceptions for "SilentArchive" folder in "SilentArchive" target */,
+/* Begin PBXCopyFilesBuildPhase section */
+		C10AE88AE2B345DE932BC19A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				526307593F6D4A7BA083231A /* ArchiverQuickAction.appex in Embed App Extensions */,
 			);
-			path = SilentArchive;
-			sourceTree = "<group>";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXFileSystemSynchronizedRootGroup section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		848076D92F1BD92A0080BD4C /* Frameworks */ = {
@@ -47,22 +72,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5829AF05ECDB490FA0BF2D6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				813BCEE2124F4998A486ACA6 /* SharedCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		848076D32F1BD92A0080BD4C = {
 			isa = PBXGroup;
 			children = (
-				848076DE2F1BD92A0080BD4C /* SilentArchive */,
+				B8F8EE69EC17472486CCFD20 /* ArchiverAgent */,
+				952C184146E8499DB993862F /* ArchiverQuickAction */,
+				C0A7201E93A14FE682593091 /* Assets.xcassets */,
 				84F68B302F1BEEFB00442150 /* Frameworks */,
 				848076DD2F1BD92A0080BD4C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
+		65BAE271397C48E493B0BDD8 /* StatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				DE105CC5FA6A4019B0A87B87 /* StatusBarController.swift */,
+				4B0CB5DA2B564D7CAC812619 /* StatusItemView.swift */,
+			);
+			path = StatusBar;
+			sourceTree = "<group>";
+		};
+		573985F45EA44A9CA05D7823 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				9560353EB5DB4A3E9BC1F8C9 /* ArchiveWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
 		848076DD2F1BD92A0080BD4C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				848076DC2F1BD92A0080BD4C /* SilentArchive.app */,
+				3A8002BE38DC4053B32C4408 /* ArchiverAgent.app */,
+				25F836E32C3046F9B052A76D /* ArchiverQuickAction.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,30 +128,74 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		952C184146E8499DB993862F /* ArchiverQuickAction */ = {
+			isa = PBXGroup;
+			children = (
+				BFFA53BD13E241B9B49D2D2A /* QuickActionHandler.swift */,
+				97A0585E5AA94DD2A1DCB5EE /* JobCreator.swift */,
+				AD32D1701044474DA27DCD8E /* Info.plist */,
+				A54CF082205947A08E2DDB24 /* ArchiverQuickAction.entitlements */,
+			);
+			path = ArchiverQuickAction;
+			sourceTree = "<group>";
+		};
+		B8F8EE69EC17472486CCFD20 /* ArchiverAgent */ = {
+			isa = PBXGroup;
+			children = (
+				51CEF6A7142C441395A7B4A1 /* AppDelegate.swift */,
+				7751195B17DD4362B2E5C9E8 /* JobQueue.swift */,
+				82B1BFEDF82C400CAF67220C /* URLRouter.swift */,
+				65BAE271397C48E493B0BDD8 /* StatusBar */,
+				573985F45EA44A9CA05D7823 /* Workers */,
+				5649F78339CC4988A6659172 /* Info.plist */,
+				B88F5399F83B4F629BB1A024 /* ArchiverAgent.entitlements */,
+			);
+			path = ArchiverAgent;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		848076DB2F1BD92A0080BD4C /* SilentArchive */ = {
+		7667403EE2B64E64A912A1B0 /* ArchiverQuickAction */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 848076E72F1BD92B0080BD4C /* Build configuration list for PBXNativeTarget "SilentArchive" */;
+			buildConfigurationList = 82EBA11D500A45B6A044DF10 /* Build configuration list for PBXNativeTarget "ArchiverQuickAction" */;
 			buildPhases = (
-				848076D82F1BD92A0080BD4C /* Sources */,
-				848076D92F1BD92A0080BD4C /* Frameworks */,
-				848076DA2F1BD92A0080BD4C /* Resources */,
+				0A2A21E68CC646C9BC92AB7C /* Sources */,
+				5829AF05ECDB490FA0BF2D6E /* Frameworks */,
+				F31397D0A531464E831106E6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				848076DE2F1BD92A0080BD4C /* SilentArchive */,
-			);
-			name = SilentArchive;
+			name = ArchiverQuickAction;
 			packageProductDependencies = (
 				84F68B502F1BEF8100442150 /* SharedCore */,
 			);
-			productName = SilentArchive;
-			productReference = 848076DC2F1BD92A0080BD4C /* SilentArchive.app */;
+			productName = ArchiverQuickAction;
+			productReference = 25F836E32C3046F9B052A76D /* ArchiverQuickAction.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		848076DB2F1BD92A0080BD4C /* ArchiverAgent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 848076E72F1BD92B0080BD4C /* Build configuration list for PBXNativeTarget "ArchiverAgent" */;
+			buildPhases = (
+				848076D82F1BD92A0080BD4C /* Sources */,
+				848076D92F1BD92A0080BD4C /* Frameworks */,
+				848076DA2F1BD92A0080BD4C /* Resources */,
+				C10AE88AE2B345DE932BC19A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0BD04948B6CC4034BF771CFC /* PBXTargetDependency */,
+			);
+			name = ArchiverAgent;
+			packageProductDependencies = (
+				84F68B502F1BEF8100442150 /* SharedCore */,
+			);
+			productName = ArchiverAgent;
+			productReference = 3A8002BE38DC4053B32C4408 /* ArchiverAgent.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -111,6 +208,9 @@
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
+					7667403EE2B64E64A912A1B0 = {
+						CreatedOnToolsVersion = 26.2;
+					};
 					848076DB2F1BD92A0080BD4C = {
 						CreatedOnToolsVersion = 26.2;
 					};
@@ -133,13 +233,22 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				848076DB2F1BD92A0080BD4C /* SilentArchive */,
+				848076DB2F1BD92A0080BD4C /* ArchiverAgent */,
+				7667403EE2B64E64A912A1B0 /* ArchiverQuickAction */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		848076DA2F1BD92A0080BD4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F47FF847C554DC9AB80849E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F31397D0A531464E831106E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -153,10 +262,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D4247E999B94812868FCCCE /* AppDelegate.swift in Sources */,
+				EBA8EC78D8DA463297B208C4 /* JobQueue.swift in Sources */,
+				A6461CB43B5B429E8C0FE214 /* URLRouter.swift in Sources */,
+				EBD1997162CA4FAEA0A9D43F /* StatusBarController.swift in Sources */,
+				3E1B1256FB884BA6834C2C0A /* StatusItemView.swift in Sources */,
+				9577B560026B40E1B723C0D8 /* ArchiveWorker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A2A21E68CC646C9BC92AB7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFDD7F20C38C444E9A6C7F04 /* QuickActionHandler.swift in Sources */,
+				4CB63F3FA2324A1983BACC67 /* JobCreator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0BD04948B6CC4034BF771CFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7667403EE2B64E64A912A1B0 /* ArchiverQuickAction */;
+			targetProxy = 63029FA39AC645D492098033 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		848076E52F1BD92B0080BD4C /* Debug */ = {
@@ -294,7 +426,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = ArchiverAgent/info.plist;
+				CODE_SIGN_ENTITLEMENTS = ArchiverAgent/ArchiverAgent.entitlements;
+				INFOPLIST_FILE = ArchiverAgent/Info.plist;
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_PREPROCESS = NO;
@@ -303,7 +436,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.cae744519ec3ac28.SilentArchive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.silentarchive.agent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -330,7 +463,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = ArchiverAgent/info.plist;
+				CODE_SIGN_ENTITLEMENTS = ArchiverAgent/ArchiverAgent.entitlements;
+				INFOPLIST_FILE = ArchiverAgent/Info.plist;
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_PREPROCESS = NO;
@@ -339,9 +473,73 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.cae744519ec3ac28.SilentArchive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.silentarchive.agent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ACE52E8EA536436598DA42F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ArchiverQuickAction/ArchiverQuickAction.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4F34Y2LNZG;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ArchiverQuickAction/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.silentarchive.quickaction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3399AF75023F48B5BD678B6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ArchiverQuickAction/ArchiverQuickAction.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4F34Y2LNZG;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ArchiverQuickAction/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.silentarchive.quickaction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -363,11 +561,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		848076E72F1BD92B0080BD4C /* Build configuration list for PBXNativeTarget "SilentArchive" */ = {
+		848076E72F1BD92B0080BD4C /* Build configuration list for PBXNativeTarget "ArchiverAgent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				848076E82F1BD92B0080BD4C /* Debug */,
 				848076E92F1BD92B0080BD4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82EBA11D500A45B6A044DF10 /* Build configuration list for PBXNativeTarget "ArchiverQuickAction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACE52E8EA536436598DA42F6 /* Debug */,
+				3399AF75023F48B5BD678B6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

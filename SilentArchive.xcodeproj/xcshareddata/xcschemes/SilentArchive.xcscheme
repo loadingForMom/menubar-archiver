@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "848076DB2F1BD92A0080BD4C"
-               BuildableName = "SilentArchive.app"
-               BlueprintName = "SilentArchive"
+               BuildableName = "ArchiverAgent.app"
+               BlueprintName = "ArchiverAgent"
                ReferencedContainer = "container:SilentArchive.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "848076DB2F1BD92A0080BD4C"
-            BuildableName = "SilentArchive.app"
-            BlueprintName = "SilentArchive"
+               BuildableName = "ArchiverAgent.app"
+               BlueprintName = "ArchiverAgent"
             ReferencedContainer = "container:SilentArchive.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -72,8 +72,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "848076DB2F1BD92A0080BD4C"
-            BuildableName = "SilentArchive.app"
-            BlueprintName = "SilentArchive"
+               BuildableName = "ArchiverAgent.app"
+               BlueprintName = "ArchiverAgent"
             ReferencedContainer = "container:SilentArchive.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

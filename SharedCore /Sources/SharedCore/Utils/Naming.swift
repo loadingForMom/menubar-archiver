@@ -19,4 +19,14 @@ public enum Naming {
         }
         return candidate
     }
+
+    public static func uniqueFolderName(baseName: String, in folder: URL, fileManager: FileManager = .default) -> String {
+        var candidate = baseName
+        var counter = 2
+        while fileManager.fileExists(atPath: folder.appendingPathComponent(candidate).path) {
+            candidate = "\(baseName) \(counter)"
+            counter += 1
+        }
+        return candidate
+    }
 }

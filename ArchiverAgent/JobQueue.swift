@@ -9,7 +9,7 @@ actor JobQueue {
     private var totalQueued = 0
     private var completed = 0
     private let store = JobStore()
-    private let statusBar = StatusBarController()
+    @MainActor private let statusBar = StatusBarController()
     private let logger = Logger(subsystem: "com.example.silentarchive", category: "JobQueue")
 
     func enqueue(jobID: UUID) {
@@ -27,13 +27,7 @@ actor JobQueue {
 
     private func runNext() async {
         guard !pending.isEmpty else {
-            isRunning = false
-            completed = 0
-            totalQueued = 0
-            await MainActor.run {
-                statusBar.teardownIfIdle()
-                NSApp.terminate(nil)
-            }
+            await finishAndMaybeTerminate()
             return
         }
 
@@ -58,11 +52,26 @@ actor JobQueue {
         } catch {
             logger.error("Failed to read job: \(error.localizedDescription, privacy: .public)")
             await MainActor.run {
-                statusBar.finish(result: .failure(error))
+                statusBar.finish(result: .failure(error.localizedDescription))
             }
         }
 
         completed += 1
         await runNext()
+    }
+
+    private func finishAndMaybeTerminate() async {
+        try? await Task.sleep(nanoseconds: 1_600_000_000)
+        guard pending.isEmpty else {
+            await runNext()
+            return
+        }
+        isRunning = false
+        completed = 0
+        totalQueued = 0
+        await MainActor.run {
+            statusBar.teardownIfIdle()
+            NSApp.terminate(nil)
+        }
     }
 }
