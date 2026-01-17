@@ -75,6 +75,7 @@ actor JobQueue {
         isRunning = false
         completed = 0
         totalQueued = 0
+        try? await Task.sleep(nanoseconds: 1_700_000_000)
         await MainActor.run {
             Self.statusBar.teardownIfIdle()
             NSApp.terminate(nil)

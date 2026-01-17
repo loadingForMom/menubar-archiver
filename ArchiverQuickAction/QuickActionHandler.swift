@@ -1,12 +1,16 @@
 import AppKit
 import UniformTypeIdentifiers
+import os
 import SharedCore
 
 final class QuickActionHandler: NSObject, NSExtensionRequestHandling {
+    private let logger = Logger(subsystem: "com.example.silentarchive", category: "QuickActionHandler")
+
     func beginRequest(with context: NSExtensionContext) {
         Task {
             let urls = await resolveFileURLs(from: context.inputItems)
             guard !urls.isEmpty else {
+                logger.info("No URLs resolved from Quick Action input items.")
                 context.completeRequest(returningItems: [], completionHandler: nil)
                 return
             }
@@ -20,6 +24,7 @@ final class QuickActionHandler: NSObject, NSExtensionRequestHandling {
                 }
                 context.completeRequest(returningItems: [], completionHandler: nil)
             } catch {
+                logger.error("Failed to create job: \(error.localizedDescription, privacy: .public)")
                 context.completeRequest(returningItems: [], completionHandler: nil)
             }
         }
