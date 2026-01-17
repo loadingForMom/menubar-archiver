@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Xcode user-specific
+xcuserdata/
+*.xcuserstate
+
+# Xcode build / DerivedData
+build/
+DerivedData/
+
+# SwiftPM (Xcode / SPM build artifacts)
+.build/
+.swiftpm/
+
+# Optional: SPM resolved file policy depends on team/workflow
+# (If you want reproducible dependency versions, consider committing it)
+# Package.resolved
+
+# Logs
+*.log
