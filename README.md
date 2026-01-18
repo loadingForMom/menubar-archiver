@@ -30,3 +30,17 @@ This workspace contains a silent macOS archiver with a Finder Quick Action and a
 4. Build the **ArchiverQuickAction** target to install the Finder action.
 
 Finder path: **right click → Quick Actions → Create Archive**.
+
+## First Run / Verification Checklist
+
+1. Build & run **ArchiverAgent** (Debug) once from Xcode and confirm the **SilentArchive Debug Panel** appears.
+2. Enable the Finder Quick Action:
+   - System Settings → Privacy & Security → Extensions → Finder Extensions → enable “Create Archive”.
+3. In Finder, select files or folders → right click → Quick Actions → **Create Archive**.
+4. Set ZIP “Open With” to ArchiverAgent:
+   - Finder → Get Info on a `.zip` → Open With → ArchiverAgent → Change All.
+5. Verify evidence/logs:
+   - App Group container path is printed in the Debug Panel.
+   - Jobs: `<container>/jobs/*.json`
+   - Logs: `<container>/logs/agent.log` and `<container>/logs/quickaction.log`
+6. Security-scoped bookmarks: if the current codebase already uses them, keep them in place. If not, use the existing job format without breaking compatibility.
