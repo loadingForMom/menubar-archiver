@@ -12,4 +12,20 @@ public enum Naming {
         }
         return candidate
     }
+
+    public static func uniqueExtractionFolderName(
+        for archiveURL: URL,
+        in folder: URL,
+        fileManager: FileManager = .default
+    ) -> String {
+        let baseName = archiveURL.deletingPathExtension().lastPathComponent
+        let resolvedBase = baseName.isEmpty ? "Archive" : baseName
+        var candidate = resolvedBase
+        var counter = 2
+        while fileManager.fileExists(atPath: folder.appendingPathComponent(candidate).path) {
+            candidate = "\(resolvedBase) \(counter)"
+            counter += 1
+        }
+        return candidate
+    }
 }

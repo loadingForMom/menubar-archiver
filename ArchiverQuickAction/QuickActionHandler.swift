@@ -4,9 +4,13 @@ import SharedCore
 
 final class QuickActionHandler: NSObject, NSExtensionRequestHandling {
     func beginRequest(with context: NSExtensionContext) {
+        let logger = QuickActionLogger()
+        logger.logInfo("Quick Action beginRequest")
         Task {
             let urls = await resolveFileURLs(from: context.inputItems)
+            logger.writeLastQuickAction(selectedCount: urls.count)
             guard !urls.isEmpty else {
+                logger.logInfo("No file URLs resolved from Quick Action input items.")
                 context.completeRequest(returningItems: [], completionHandler: nil)
                 return
             }
@@ -14,12 +18,22 @@ final class QuickActionHandler: NSObject, NSExtensionRequestHandling {
             do {
                 let jobCreator = JobCreator()
                 let job = try jobCreator.createJob(for: urls)
+                let jobPath = try JobStore().jobFileURL(for: job.id)
+                logger.logInfo("Created archive job \(job.id.uuidString) at \(jobPath.path)")
                 let url = URL(string: "archiver://run?job=\(job.id.uuidString)")
                 if let url {
-                    NSWorkspace.shared.open(url)
+                    let opened = NSWorkspace.shared.open(url)
+                    if opened {
+                        logger.logInfo("Opened URL scheme for job \(job.id.uuidString)")
+                    } else {
+                        logger.logError("Failed to open URL scheme for job \(job.id.uuidString)")
+                    }
+                } else {
+                    logger.logError("Failed to build URL scheme for job \(job.id.uuidString)")
                 }
                 context.completeRequest(returningItems: [], completionHandler: nil)
             } catch {
+                logger.logError("Quick Action failed: \(error.localizedDescription)")
                 context.completeRequest(returningItems: [], completionHandler: nil)
             }
         }

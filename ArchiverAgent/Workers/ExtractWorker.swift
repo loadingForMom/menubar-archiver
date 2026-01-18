@@ -1,7 +1,7 @@
 import Foundation
 import SharedCore
 
-final class ArchiveWorker {
+final class ExtractWorker {
     private let job: Job
     private let token = CancellationToken()
     private let logger = AgentLogger.shared
@@ -15,42 +15,45 @@ final class ArchiveWorker {
     }
 
     func run(progressHandler: @escaping @Sendable (JobProgress) -> Void) async -> JobResult {
-        let destination = job.destinationFolderURL.appendingPathComponent(job.outputName)
+        guard let archiveURL = job.items.first else {
+            await logger.logError("Extract worker missing archive URL for job \(job.id.uuidString)")
+            return .failure(ArchiveError.unableToOpen)
+        }
+        let destination = job.destinationFolderURL.appendingPathComponent(job.outputName, isDirectory: true)
         let engine = ZipFoundationEngine()
         var lastLoggedBucket = -1
 
-        await logger.logInfo("Archive worker starting for job \(job.id.uuidString) -> \(destination.path)")
+        await logger.logInfo("Extract worker starting for job \(job.id.uuidString) -> \(destination.path)")
 
         do {
-            let total = try FileEnumeration.countFiles(for: job.items)
-            progressHandler(JobProgress(fractionComplete: 0, completed: 0, total: total))
-            try engine.archive(items: job.items, destination: destination, progress: { completed, total in
+            try FileManager.default.createDirectory(at: destination, withIntermediateDirectories: true)
+            try engine.extract(archiveURL: archiveURL, destination: destination, progress: { completed, total in
                 let fraction = total > 0 ? Double(completed) / Double(total) : 1.0
                 progressHandler(JobProgress(fractionComplete: fraction, completed: completed, total: total))
                 let percent = Int(fraction * 100)
                 let bucket = percent / 10
                 if bucket != lastLoggedBucket {
                     lastLoggedBucket = bucket
-                    Task { await self.logger.logInfo("Archive progress \(percent)% for job \(self.job.id.uuidString)") }
+                    Task { await self.logger.logInfo("Extract progress \(percent)% for job \(self.job.id.uuidString)") }
                 }
             }, isCancelled: {
                 self.token.isCancelled()
             })
 
-            await logger.logInfo("Archive worker completed job \(job.id.uuidString)")
+            await logger.logInfo("Extract worker completed job \(job.id.uuidString)")
             return .success(destination)
         } catch let error as ArchiveError {
             cleanup(destination: destination)
             switch error {
             case .cancelled:
-                await logger.logInfo("Archive worker canceled job \(job.id.uuidString)")
+                await logger.logInfo("Extract worker canceled job \(job.id.uuidString)")
                 return .canceled
             case .unableToCreate, .unableToOpen:
-                await logger.logError("Archive worker failed job \(job.id.uuidString): \(error)")
+                await logger.logError("Extract worker failed job \(job.id.uuidString): \(error)")
                 return .failure(error)
             }
         } catch {
-            await logger.logError("Archiving failed for job \(job.id.uuidString): \(error.localizedDescription)")
+            await logger.logError("Extract failed for job \(job.id.uuidString): \(error.localizedDescription)")
             cleanup(destination: destination)
             return .failure(error)
         }

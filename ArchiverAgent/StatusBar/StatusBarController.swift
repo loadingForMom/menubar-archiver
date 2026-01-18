@@ -15,7 +15,7 @@ final class StatusBarController {
         statusItemView?.onCancel = cancelHandler
     }
 
-    func updateProgress(_ progress: ArchiveWorker.Progress) {
+    func updateProgress(_ progress: JobProgress) {
         let percent = Int(progress.fractionComplete * 100)
         let queueSuffix: String
         if let queueInfo, queueInfo.total > 1 {

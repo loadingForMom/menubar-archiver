@@ -28,5 +28,6 @@ public struct Job: Codable, Sendable {
 public extension Job {
     enum Operation: String, Codable, Sendable {
         case archive
+        case extract
     }
 }

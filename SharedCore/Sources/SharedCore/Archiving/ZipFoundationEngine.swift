@@ -31,9 +31,41 @@ public struct ZipFoundationEngine: ArchivingEngine {
             progress(processed, totalFiles)
         }
     }
+
+    public func extract(
+        archiveURL: URL,
+        destination: URL,
+        progress: @Sendable (Int, Int) -> Void,
+        isCancelled: @Sendable () -> Bool
+    ) throws {
+        guard let archive = Archive(url: archiveURL, accessMode: .read) else {
+            throw ArchiveError.unableToOpen
+        }
+
+        let totalEntries = archive.count
+        var processed = 0
+        try fileManager.createDirectory(at: destination, withIntermediateDirectories: true)
+
+        for entry in archive {
+            if isCancelled() {
+                throw ArchiveError.cancelled
+            }
+            let outputURL = destination.appendingPathComponent(entry.path)
+            switch entry.type {
+            case .directory:
+                try fileManager.createDirectory(at: outputURL, withIntermediateDirectories: true)
+            default:
+                try fileManager.createDirectory(at: outputURL.deletingLastPathComponent(), withIntermediateDirectories: true)
+                try archive.extract(entry, to: outputURL)
+            }
+            processed += 1
+            progress(processed, totalEntries)
+        }
+    }
 }
 
 public enum ArchiveError: Error {
     case unableToCreate
+    case unableToOpen
     case cancelled
 }
