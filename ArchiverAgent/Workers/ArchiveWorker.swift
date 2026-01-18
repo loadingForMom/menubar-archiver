@@ -22,16 +22,23 @@ final class ArchiveWorker {
     }
 
     func run(progressHandler: @escaping (Progress) -> Void) async -> JobResult {
-        let destination = job.destinationFolderURL.appendingPathComponent(job.outputName)
         let engine = ZipFoundationEngine()
+        var outputURL: URL?
 
         do {
+            let resolved = try resolveJobResources()
+            defer {
+                resolved.accessedResources.forEach { $0.stopAccessingSecurityScopedResource() }
+            }
+            let destination = resolved.destinationFolder.appendingPathComponent(job.outputName)
+            outputURL = destination
+
             switch job.operation {
             case .archive:
-                let total = try FileEnumeration.countFiles(for: job.items)
+                let total = try FileEnumeration.countFiles(for: resolved.items)
                 progressHandler(Progress(fractionComplete: 0, completed: 0, total: total))
                 try engine.archive(
-                    items: job.items,
+                    items: resolved.items,
                     destination: destination,
                     progress: { completed, total in
                         let fraction = total > 0 ? Double(completed) / Double(total) : 1.0
@@ -42,7 +49,7 @@ final class ArchiveWorker {
                     }
                 )
             case .extract:
-                guard let archiveURL = job.items.first else {
+                guard let archiveURL = resolved.items.first else {
                     throw ArchiveError.unableToOpen
                 }
                 progressHandler(Progress(fractionComplete: 0, completed: 0, total: 0))
@@ -61,7 +68,8 @@ final class ArchiveWorker {
 
             return .success(destination)
         } catch let error as ArchiveError {
-            cleanup(destination: destination)
+            logger.error("Archive operation failed: \(error.localizedDescription, privacy: .public)")
+            cleanup(destination: outputURL)
             switch error {
             case .cancelled:
                 return .canceled
@@ -70,12 +78,67 @@ final class ArchiveWorker {
             }
         } catch {
             logger.error("Job failed: \(error.localizedDescription, privacy: .public)")
-            cleanup(destination: destination)
+            cleanup(destination: outputURL)
             return .failure(error.localizedDescription)
         }
     }
 
-    private func cleanup(destination: URL) {
+    private func resolveJobResources() throws -> (items: [URL], destinationFolder: URL, accessedResources: [URL]) {
+        var accessed: [URL] = []
+        var items: [URL] = []
+        do {
+            for item in job.items {
+                let resolved = try resolveBookmark(item.bookmark, label: item.displayName)
+                try startAccessing(resolved)
+                accessed.append(resolved)
+                items.append(resolved)
+            }
+
+            let destinationFolder = try resolveBookmark(job.destinationFolderBookmark, label: "destination")
+            try startAccessing(destinationFolder)
+            accessed.append(destinationFolder)
+
+            return (items, destinationFolder, accessed)
+        } catch {
+            accessed.forEach { $0.stopAccessingSecurityScopedResource() }
+            throw error
+        }
+    }
+
+    private func resolveBookmark(_ data: Data, label: String?) throws -> URL {
+        var stale = false
+        let url = try URL(
+            resolvingBookmarkData: data,
+            options: [.withSecurityScope],
+            relativeTo: nil,
+            bookmarkDataIsStale: &stale
+        )
+        if stale {
+            logger.warning("Resolved stale bookmark for \(label ?? "item", privacy: .public); access may be limited.")
+        }
+        return url
+    }
+
+    private func startAccessing(_ url: URL) throws {
+        if !url.startAccessingSecurityScopedResource() {
+            logger.error("Failed to access security-scoped resource: \(url.path, privacy: .public)")
+            throw ArchiveWorkerError.failedToAccessResource(url)
+        }
+    }
+
+    private func cleanup(destination: URL?) {
+        guard let destination else { return }
         try? FileManager.default.removeItem(at: destination)
+    }
+}
+
+enum ArchiveWorkerError: LocalizedError {
+    case failedToAccessResource(URL)
+
+    var errorDescription: String? {
+        switch self {
+        case .failedToAccessResource(let url):
+            return "Failed to access security-scoped resource: \(url.path)"
+        }
     }
 }

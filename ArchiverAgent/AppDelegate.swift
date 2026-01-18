@@ -47,17 +47,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let baseName = zipURL.deletingPathExtension().lastPathComponent
         let folderName = Naming.uniqueFolderName(baseName: baseName, in: parent)
 
-        let job = Job(
-            id: UUID(),
-            createdAt: Date(),
-            items: [zipURL],
-            destinationFolderURL: parent,
-            operation: .extract,
-            outputName: folderName
-        )
-
         Task {
             do {
+                let zipBookmark = try makeBookmark(for: zipURL, readOnly: true)
+                let destinationBookmark = try makeBookmark(for: parent, readOnly: false)
+                let job = Job(
+                    id: UUID(),
+                    createdAt: Date(),
+                    items: [JobItem(bookmark: zipBookmark, displayName: zipURL.lastPathComponent)],
+                    destinationFolderBookmark: destinationBookmark,
+                    operation: .extract,
+                    outputName: folderName
+                )
                 _ = try jobStore.write(job)
                 logger.info("Enqueued extract job for \(zipURL.path, privacy: .public)")
 
@@ -66,7 +67,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
                 // Real read-back verification (confirms App Group container works):
                 let readBack = try jobStore.read(id: job.id)
-                print("Read-back extract job OK:", readBack.id, readBack.items)
+                print("Read-back extract job OK:", readBack.id, readBack.items.map(\.displayName))
 
                 await jobQueue.enqueue(jobID: job.id)
             } catch {
@@ -96,23 +97,24 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             outputName = Naming.uniqueArchiveName(in: destinationFolder)
         }
 
-        let job = Job(
-            id: UUID(),
-            createdAt: Date(),
-            items: [url],
-            destinationFolderURL: destinationFolder,
-            operation: operation,
-            outputName: outputName
-        )
-
         Task {
             do {
+                let itemBookmark = try makeBookmark(for: url, readOnly: true)
+                let destinationBookmark = try makeBookmark(for: destinationFolder, readOnly: false)
+                let job = Job(
+                    id: UUID(),
+                    createdAt: Date(),
+                    items: [JobItem(bookmark: itemBookmark, displayName: url.lastPathComponent)],
+                    destinationFolderBookmark: destinationBookmark,
+                    operation: operation,
+                    outputName: outputName
+                )
                 _ = try jobStore.write(job)
                 print("Wrote debug job:", job.id, "op:", job.operation.rawValue, "item:", url.path)
 
                 // Real read-back verification:
                 let readBack = try jobStore.read(id: job.id)
-                print("Read-back debug job OK:", readBack.id, readBack.items)
+                print("Read-back debug job OK:", readBack.id, readBack.items.map(\.displayName))
 
                 logger.info("DEBUG: enqueued test job for \(url.path, privacy: .public)")
                 await jobQueue.enqueue(jobID: job.id)
@@ -123,4 +125,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     #endif
+
+    private func makeBookmark(for url: URL, readOnly: Bool) throws -> Data {
+        var options: URL.BookmarkCreationOptions = [.withSecurityScope]
+        if readOnly {
+            options.insert(.securityScopeAllowOnlyReadAccess)
+        }
+        do {
+            return try url.bookmarkData(options: options, includingResourceValuesForKeys: nil, relativeTo: nil)
+        } catch {
+            logger.error("Failed to create bookmark for \(url.path, privacy: .public): \(error.localizedDescription, privacy: .public)")
+            throw error
+        }
+    }
 }
